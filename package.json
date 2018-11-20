@@ -1,0 +1,40 @@
+{
+  "name": "thinnr-cli",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/",
+  "module": "esm/",
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "babel --delete-dir-on-start -d esm/ src/",
+    "build:cjs": "babel --delete-dir-on-start --env-name cjs -d lib/ src/",
+    "preversion": "npm test",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinnr/thinnr-cli.git"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "keywords": [],
+  "author": "alexNeto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thinnr/thinnr-cli/issues"
+  },
+  "homepage": "https://github.com/thinnr/thinnr-cli#readme",
+  "dependencies": {
+    "colors": "^1.3.2",
+    "commander": "^2.19.0",
+    "inquirer": "^6.2.0",
+    "lodash": "^4.17.11",
+    "pad": "^2.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6"
+  }
+}
