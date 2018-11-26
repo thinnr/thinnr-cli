@@ -1,11 +1,8 @@
 const program = require('commander');
 
-const list = require('./resources/list');
-const order = require('./resources/order')
-
-
 program
     .command('init')
+    .alias('i')
     .description('create a new project')
     .action(init)
 
